@@ -1,4 +1,4 @@
-public class VitalSign {
+class VitalSign {
     private final int heartRate;
     private final int bloodPressure;
 
@@ -21,7 +21,7 @@ public class VitalSign {
 }
 
 
-public class Patient implements Runnable {
+class Patient implements Runnable {
     private final String name;
     private final MonitorSystem monitor;
     private volatile boolean running = true;
@@ -66,7 +66,7 @@ public class Patient implements Runnable {
     public String getName() { return name; }
 }
 
-public class MonitorSystem {
+ class MonitorSystem {
     public synchronized void receiveVitals(Patient patient, VitalSign vitals) {
         System.out.println("Received from " + patient.getName() + ": " + vitals);
         if (vitals.isCritical()) {
